@@ -109,7 +109,7 @@ def check_if_it_is_number(numero):
 
 
 check_if_it_is_number(input("Digite um numero: "))
-"""
+
 
 while True:
     try:
@@ -118,3 +118,58 @@ while True:
         break
     except ValueError:
         print("Entre com um numero valido")
+
+# Modulo 2 Orientado a objetos - Agregação, classes e metodos estáticos
+    #Agregação
+
+
+class Salary:
+    def __init__(self, base, bonus):
+        self.base = base
+        self.bonus = bonus
+
+    def annual_salary(self):
+        return (self.base * 12) + self.bonus
+
+
+class Employee:
+    def __init__(self, name, age, salary):
+        self.name = name
+        self.age = age
+        self.aggregate_salary = salary
+
+    def total_salary(self):
+        return self.aggregate_salary.annual_salary()
+
+
+salary = Salary(10000, 700)
+employee = Employee('John', 26, salary)
+print(employee.total_salary())
+
+# Classes e metodos estáticos
+
+
+from datetime import date
+
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    @classmethod
+    def from_birth_age(cls, name, year):
+        return cls(name, date.today().year - year)
+
+    @staticmethod
+    def legal_age(age):
+        return age >= 18
+
+
+person1 = Person("John", 26)
+person2 = Person.from_birth_age("Patty", 2000)
+
+print(person1.age)
+print(person2.age)
+print(Person.legal_age(17))
+"""
