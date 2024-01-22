@@ -173,3 +173,30 @@ print(person1.age)
 print(person2.age)
 print(Person.legal_age(17))
 """
+from Account import Account
+
+"""
+ 1. Classes e objetos
+    É uma declaração de tipo que encapsula constantes, variáveis e metodos que 
+    realizam a manipulação dos valores dessas variáveis.
+
+ 2. Construtores e Self
+ 
+ 3. Métodos
+ 
+ 4.Agregação
+    
+ 5.Composição   
+    
+"""
+
+
+def main():
+    c1 = Account(1, 1, "John", 0)
+    c1.deposit(300)
+    c1.withdraw(100)
+    c1.statement()
+
+
+if __name__ == "__main__":
+    main()
