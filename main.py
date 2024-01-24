@@ -187,8 +187,11 @@ from Account import Account
  4.Agregação
     
  5.Composição   
+ 
+ O decorator @classmethod fica armazenado na mesma área de memória dos atributos de classe. Portanto,
+  ele pode alterar os valores dos atributos de classe.
     
-"""
+
 
 
 def main():
@@ -200,3 +203,36 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+"""
+
+
+# Herança, Polimorfismo E Exeções
+# 1. Herança
+
+
+class SumTimes:
+    def __init__(self, a, b):
+        self.b = b
+        self.a = a
+
+    def sum(self):
+        return self.a + self.b
+
+    def sum(self, a, b, c):
+        return a + b + c
+
+    def times(self):
+        return self.a * self.b
+
+
+class Derivative(SumTimes):
+    def minus(self):
+        return self.a - self.b
+
+    def division(self):
+        return self.a / self.b
+
+
+d = Derivative(10, 20)
+print(f'The sum of 10, 20 and 30 is: {d.sum(10, 20, 30)}')
